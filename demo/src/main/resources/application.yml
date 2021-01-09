@@ -1,0 +1,97 @@
+spring:
+  profiles:
+    active: dev
+  datasource:
+    #driver-class-name: com.mysql.cj.jdbc.Driver
+    #sql分析
+    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+    url: jdbc:p6spy:mysql://172.16.193.114:3306/user?allowMultiQueries=true&useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false
+    #url: jdbc:mysql://172.16.193.114:3306/user?allowMultiQueries=true&useUnicode=true&serverTimezone=Asia/Shanghai&characterEncoding=utf8&useUnicode=true&useSSL=false
+    username: root
+    password: zhx199503
+  redis:
+    host: 172.16.193.114
+    port: 6379
+    password:
+    database: 0
+mybatis-plus:
+#  configuration:
+#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    db-config:
+      logic-delete-field: flag  # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+logging:
+  level:
+    root: info
+    #com.example.demo: debug
+
+
+#server:
+#  port: 9091
+#spring:
+#  datasource:
+#    #url: jdbc:mysql://127.0.0.1:3306/mytest?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT
+#    #sql分析插件需要切换url及驱动具体看mybatis-plus官网
+#    url: jdbc:p6spy:mysql://127.0.0.1:3306/mytest?allowMultiQueries=true&useUnicode=true&characterEncoding=UTF-8&useSSL=false&serverTimezone=GMT
+#    username: root
+#    password: 123456
+#    # driver-class-name: com.mysql.cj.jdbc.Driver
+#    driver-class-name: com.p6spy.engine.spy.P6SpyDriver
+#mybatis-plus:
+#  #MyBaits 别名包扫描路径，通过该属性可以给包中的类注册别名，注册后在 Mapper 对应的 XML 文件中可以直接使用类名，而不用使用全限定的类名（即 XML 中调用的时候不用包含包名）。
+#  type-aliases-package: com.hlvy.mybatis_plus.entity
+#  #该配置请和 typeAliasesPackage 一起使用，如果配置了该属性，则仅仅会扫描路径下以该类作为父类的域对象
+#  type-aliases-super-type: java.lang.Object
+#  #MyBatis Mapper 所对应的 XML 文件位置，如果您在 Mapper 中有自定义方法（XML 中有自定义实现），需要进行该配置，告诉 Mapper 所对应的 XML 文件位置。
+#  mapper-locations: classpath*:mybatis/*.xml
+#  #MyBatis 配置文件位置，如果您有单独的 MyBatis 配置，请将其路径配置到 configLocation 中。
+#  #config-location: classpath:mybatis-config.xml
+#  #启动时是否检查 MyBatis XML 文件的存在，默认不检查
+#  check-config-location: false
+#  global-config:
+#    db-config: #配置逻辑删除
+#      logic-delete-value: 1 # 逻辑已删除值(默认为 1)
+#      logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
+#      #id-type: none #全局策略
+#      #field-strategy: ignored #所有字段加入crud语句中 一般不这么设置 默认not_null
+#      #table-prefix: t_ #表的前缀
+#      #table-underline: true #表名是否使用下划线
+#    #configuration:#不能与config-location同时出现
+#    #map-underscore-to-camel-case: true
+##设置日志 级别
+#logging:
+#  level:
+#    root: warn
+#    com.hlvy.mybatis_plus: trace
+#  pattern:
+#    console: '%P%m%n'
+
+##############
+# spy.properties
+###
+#  module.log=com.p6spy.engine.logging.P6LogFactory,com.p6spy.engine.outage.P6OutageFactory
+#  # 自定义日志打印
+#  logMessageFormat=com.baomidou.mybatisplus.extension.p6spy.P6SpyLogger
+#  #日志输出到控制台
+#  #appender=com.baomidou.mybatisplus.extension.p6spy.StdoutLogger
+#  # 使用日志系统记录 sql
+#  #appender=com.p6spy.engine.spy.appender.Slf4JLogger
+#  # 设置 p6spy driver 代理
+#  deregisterdrivers=true
+#  # 取消JDBC URL前缀
+#  useprefix=true
+#  # 配置记录 Log 例外,可去掉的结果集有error,info,batch,debug,statement,commit,rollback,result,resultset.
+#  excludecategories=info,debug,result,batch,resultset
+#  # 日期格式
+#  dateformat=yyyy-MM-dd HH:mm:ss
+#  # 实际驱动可多个
+#  #driverlist=org.h2.Driver
+#  # 是否开启慢SQL记录
+#  outagedetection=true
+#  # 慢SQL记录标准 2 秒
+#  outagedetectioninterval=2
+#
+#  #输出到文件中需要把输出到控制台注释掉
+#  logfile=log.log
