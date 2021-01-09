@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="PersistentConfig">
+    <option name="configs">
+      <map>
+        <entry key="15">
+          <value>
+            <RedisServerNode>
+              <option name="auth" value="renxing" />
+              <option name="comment" value="本地" />
+              <option name="connect" value="true" />
+              <option name="host" value="172.16.16.46" />
+              <option name="id" value="15" />
+              <option name="name" value="localhost" />
+              <option name="port" value="6379" />
+            </RedisServerNode>
+          </value>
+        </entry>
+      </map>
+    </option>
+    <option name="configList">
+      <list>
+        <RedisServerNode>
+          <option name="auth" value="renxing" />
+          <option name="comment" value="本地" />
+          <option name="host" value="172.16.16.46" />
+          <option name="id" value="15" />
+          <option name="name" value="localhost" />
+          <option name="port" value="6379" />
+        </RedisServerNode>
+      </list>
+    </option>
+    <option name="consoleFilePath" value="C:\Users\Tears\AppData\Local\Temp\redis\df558d71-3cac-4c5f-a142-036a1fdbc009\console.redis" />
+    <option name="id" value="16" />
+    <option name="runActionTipCount" value="3" />
+    <option name="lastRedisServerNode">
+      <RedisServerNode>
+        <option name="auth" value="renxing" />
+        <option name="comment" value="本地" />
+        <option name="connect" value="true" />
+        <option name="host" value="172.16.16.46" />
+        <option name="id" value="15" />
+        <option name="name" value="localhost" />
+        <option name="port" value="6379" />
+      </RedisServerNode>
+    </option>
+  </component>
+</project>
