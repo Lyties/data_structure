@@ -1,6 +1,12 @@
+server:
+  port: 8080
+
+#base
 spring:
   profiles:
     active: dev
+  application:
+    name: spring-boot-study
   datasource:
     #driver-class-name: com.mysql.cj.jdbc.Driver
     #sql分析
@@ -14,20 +20,31 @@ spring:
     port: 6379
     password:
     database: 0
+  #elasticsearch
+  elasticsearch:
+    rest:
+      uris:
+        - 172.16.193.114:9200
+      # username:
+      # password:
+      # read-timeout: 30
+#    cluster-nodes:
+#    cluster-name: my-application ## 表示 集群名字，在es的elasticsearch.yml中查看
+#      repositories:
+#        enabled: true
+
 mybatis-plus:
-#  configuration:
-#    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  #  configuration:
+  #    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
   global-config:
     db-config:
-      logic-delete-field: flag  # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
+      logic-delete-field: flag # 全局逻辑删除的实体字段名(since 3.3.0,配置后可以忽略不配置步骤2)
       logic-delete-value: 1 # 逻辑已删除值(默认为 1)
       logic-not-delete-value: 0 # 逻辑未删除值(默认为 0)
 logging:
   level:
     root: info
     #com.example.demo: debug
-
-
 #server:
 #  port: 9091
 #spring:

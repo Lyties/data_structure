@@ -1,5 +1,6 @@
 {
   "editor.snippetSuggestions": "bottom",
   "editor.suggest.snippetsPreventQuickSuggestions": false,
-  "maven.view": "hierarchical"
+  "maven.view": "hierarchical",
+  "java.configuration.updateBuildConfiguration": "interactive"
 }

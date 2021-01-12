@@ -45,6 +45,21 @@ public class DynamicArrayList {
     return elements[index];
   }
 
+  public int set(int index, int element) {
+    if (index < 0 || index >= size) {
+      throw new IndexOutOfBoundsException("Index:" + index + ", Size:" + size);
+    }
+    int old = elements[index];
+    elements[index] = element;
+    return old;
+  }
+
+  public void add(int index, int element) {}
+
+  public int remve(int index) {
+    return 0;
+  }
+
   public int indexOf(int element) {
     for (int index = 0; index < elements.length; index++) {
       if (elements[index] == element) {
