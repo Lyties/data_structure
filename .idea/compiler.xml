@@ -7,11 +7,7 @@
         <sourceOutputDir name="target/generated-sources/annotations" />
         <sourceTestOutputDir name="target/generated-test-sources/test-annotations" />
         <outputRelativeToContentRoot value="true" />
-        <module name="eladmin-common" />
-        <module name="eladmin-logging" />
-        <module name="eladmin-system" />
-        <module name="eladmin-generator" />
-        <module name="eladmin-tools" />
+        <module name="demo" />
       </profile>
     </annotationProcessing>
     <bytecodeTargetLevel>

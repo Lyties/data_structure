@@ -36,28 +36,40 @@ public class DynamicArrayList {
     return indexOf(element) != ELEMENT_NOT_FOUND;
   }
 
-  public void add(int element) {}
+  public void add(int element) {
+    //elements[size++] = element;
+    add(size, element);
+  }
 
   public int get(int index) {
-    if (index < 0 || index >= size) {
-      throw new IndexOutOfBoundsException("Index:" + index + ", Size:" + size);
-    }
+    rangeCheck(index);
     return elements[index];
   }
 
   public int set(int index, int element) {
-    if (index < 0 || index >= size) {
-      throw new IndexOutOfBoundsException("Index:" + index + ", Size:" + size);
-    }
+    rangeCheck(index);
     int old = elements[index];
     elements[index] = element;
     return old;
   }
 
-  public void add(int index, int element) {}
+  public void add(int index, int element) {
+    rangeCheckForAdd(index);
+    for (int i = size - 1; i >= index; i--) {
+      elements[i + 1] = elements[i];
+    }
+    elements[index] = element;
+    size++;
+  }
 
-  public int remve(int index) {
-    return 0;
+  public int remove(int index) {
+    rangeCheck(index);
+    int old = elements[index];
+    for (int i = index; i < size - 1; i++) {
+      elements[i] = elements[i + 1];
+    }
+    size--;
+    return old;
   }
 
   public int indexOf(int element) {
@@ -67,5 +79,37 @@ public class DynamicArrayList {
       }
     }
     return ELEMENT_NOT_FOUND;
+  }
+
+  @Override
+  public String toString() {
+    // TODO Auto-generated method stub
+    StringBuilder sb = new StringBuilder();
+    sb.append("size = ").append(size).append(" , elements = [");
+    for (int index = 0; index < size; index++) {
+      sb.append(elements[index]).append(", ");
+    }
+    if (size > 0) {
+      int index = sb.lastIndexOf(",");
+      sb.delete(index, index + 2);
+    }
+    sb.append("]");
+    return sb.toString();
+  }
+
+  private void rangeCheckForAdd(int index) {
+    if (index < 0 || index > size) {
+      outOFBounds(index);
+    }
+  }
+
+  private void rangeCheck(int index) {
+    if (index < 0 || index >= size) {
+      outOFBounds(index);
+    }
+  }
+
+  private void outOFBounds(int index) {
+    throw new IndexOutOfBoundsException("Index:" + index + ", Size:" + size);
   }
 }
