@@ -9,5 +9,5 @@ e
 5eladmin/eladmin-web/src/views/components/YamlEdit.vue,a\3\a31396e52cdee8ee0120632594ecd9cebaeb7057
 t
 Deladmin/eladmin/eladmin-system/src/main/java/me/zhengjie/AppRun.java,6\5\65bb01ea4b1768041233f8927a9f9d39479a2f93
-_
-/src/main/java/com/example/demo/canal/Canal.java,c\c\ccf8f9b2a8c30a8e92583929e8d7ddb620c59cea
+4
+mvnw,5\d\5d837c4ed85ecaaf932c506e80ff5d7b9f3d590d

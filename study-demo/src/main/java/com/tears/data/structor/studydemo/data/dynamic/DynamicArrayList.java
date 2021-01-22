@@ -55,11 +55,33 @@ public class DynamicArrayList {
 
   public void add(int index, int element) {
     rangeCheckForAdd(index);
+    ensureCapacity(size + 1);
     for (int i = size - 1; i >= index; i--) {
       elements[i + 1] = elements[i];
     }
     elements[index] = element;
     size++;
+  }
+
+  /**
+   * 保证容量
+   */
+  private void ensureCapacity(int capacity) {
+    int oldCapacity = elements.length;
+    if (oldCapacity >= capacity) {
+      return;
+    }
+    int newCapacity = oldCapacity + (oldCapacity >>> 1);
+    int[] newElements = new int[newCapacity];
+    /* for (int i = 0; i < size; i++) {
+      newElements[i] = elements[i];
+    } */
+    System.arraycopy(elements, 0, newElements, 0, size);
+    elements = newElements;
+  }
+
+  public int capacity() {
+    return elements.length;
   }
 
   public int remove(int index) {
